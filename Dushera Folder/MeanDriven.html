@@ -1,0 +1,66 @@
+<html>
+
+<head>
+ <meta name="viewport" content="width=device-width, initial-scale=1">
+</head>
+
+<body>
+
+Here you can write the HTML code
+<script>while (true) {
+  // Display menu
+  console.log("Please choose an option:");
+  console.log("1. Square root");
+  console.log("2. Power");
+  console.log("3. Absolute value");
+  console.log("4. Exit");
+
+  // Read user input
+  const option = parseInt(prompt("Enter option number:"));
+
+  // Validate input
+  if (isNaN(option) || option < 1 || option > 4) {
+    console.log("Invalid option. Please try again.");
+    continue;
+  }
+
+  // Exit if the user chose option 4
+  if (option === 4) {
+    break;
+  }
+
+  // Read number from the user
+  const num = parseFloat(prompt("Enter a number:"));
+
+  // Validate input
+  if (isNaN(num)) {
+    console.log("Invalid number. Please try again.");
+    continue;
+  }
+
+  // Perform the chosen operation
+  let result;
+  switch (option) {
+    case 1:
+      result = Math.sqrt(num);
+      break;
+    case 2:
+      const exponent = parseFloat(prompt("Enter exponent:"));
+      if (isNaN(exponent)) {
+        console.log("Invalid exponent. Please try again.");
+        continue;
+      }
+      result = Math.pow(num, exponent);
+      break;
+    case 3:
+      result = Math.abs(num);
+      break;
+  }
+
+  // Display result
+  console.log(`Result: ${result}`);
+}
+</script>
+</body>
+
+</html>
